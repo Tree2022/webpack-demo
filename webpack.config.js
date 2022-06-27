@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
@@ -65,6 +66,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.vue$/, loader: 'vue-loader' },
     ],
   },
   output: {
@@ -78,6 +80,7 @@ module.exports = {
       template: './public/index.html', // 告诉webpack使用插件时, 以我们自己的html文件作为模板去生成dist/html文件
       filename: 'index.html', // 生成文件的名称
     }),
+    new VueLoaderPlugin(),
   ],
   devServer: {
     port: 3000, // 端口号
