@@ -6,9 +6,11 @@ import './styles/index.less';
 import $ from 'jquery';
 import App from '../src/App.vue';
 
-new Vue({
-  //注册路由信息，当这里书写router的时候，组件身上都拥有$route , $router属性
-}).$mount('#app');
+// var app = new Vue({
+//   render: h => h(App),
+
+//   //注册路由信息，当这里书写router的时候，组件身上都拥有$route , $router属性
+// }).$mount('#app');
 // 引入字体图标文件
 import './assets/fonts/iconfont.css';
 
@@ -27,3 +29,6 @@ import imgUrl from './assets/1.gif';
 const theImg = document.createElement('img');
 theImg.src = imgUrl;
 document.body.appendChild(theImg);
+
+const app = createApp(App);
+app.mount('#app');
